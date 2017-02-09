@@ -3,7 +3,10 @@
     <div class="page">
       <home :title="title"></home>
       <navigation :articles="articles"></navigation>
-      <router-view :articles="articles"></router-view>
+      <transition name="fade" mode="out-in">
+        <router-view :key="$route.params.article_id" :articles="articles"></router-view>
+      </transition>
+      {{ path }}
       <logo></logo>
     </div>
   </div>
@@ -23,13 +26,7 @@ export default {
   data() {
     return {
       title: 'Junior Days',
-      articles: [
-        { id: 0, title: 'TITLE 1', content: 'lorem ipsum dolor sit amet consecteur. lorem ipsum dolor sit amet consecteur. lorem ipsum dolor sit amet consecteur. lorem ipsum dolor sit amet consecteur.' },
-        { id: 1, title: 'TITLE 2', content: 'lorem ipsum dolor sit amet consecteur.' },
-        { id: 2, title: 'TITLE 3', content: 'lorem ipsum dolor sit amet consecteur.' },
-        { id: 3, title: 'TITLE 4', content: 'lorem ipsum dolor sit amet consecteur.' },
-        { id: 4, title: 'TITLE 5', content: 'lorem ipsum dolor sit amet consecteur.' },
-      ]
+      articles: this.$store.state.articles
     }
   }
 }
@@ -57,5 +54,12 @@ body {
 a {
   color: #333;
   text-decoration: none;
+}
+.fade-enter-active, .fade-leave-active {
+  transition: all .3s;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0;
+  transform: translateX(100px);
 }
 </style>

@@ -1,8 +1,10 @@
 <template>
-  <div class="article">
-    <h2>{{ articles[this.$route.params.article_id].title }}</h2>
-    <p>{{ articles[this.$route.params.article_id].content }}</p>
-  </div>
+  <transition name="fade">
+    <div class="article">
+      <h2>{{ articles[this.$route.params.article_id].title }}</h2>
+      <p>{{ articles[this.$route.params.article_id].content }}</p>
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -12,7 +14,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .article {
   margin-left: 1rem;
