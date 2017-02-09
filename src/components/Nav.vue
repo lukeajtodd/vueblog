@@ -14,12 +14,7 @@
 <script>
 export default {
   name: 'nav',
-  props: [ 'articles' ],
-  data () {
-    return {
-      
-    }
-  }
+  props: [ 'articles' ]
 }
 </script>
 
