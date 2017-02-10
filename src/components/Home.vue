@@ -29,7 +29,7 @@
     background: #333;
     position: absolute;
     top: 0;
-    left: 0;
+    left: -10px;
     transition: all 1s;
   }
   .header:hover:before {
