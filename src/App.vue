@@ -6,7 +6,6 @@
       <transition name="fade" mode="out-in">
         <router-view :key="$route.params.article_id" :articles="articles"></router-view>
       </transition>
-      {{ path }}
       <logo></logo>
     </div>
   </div>
@@ -34,10 +33,13 @@ export default {
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Bahiana|Bungee');
+*, *:after, *:before {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   position: relative;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 80px);
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -50,6 +52,14 @@ body {
   text-align: left;
   width: 60%;
   margin: 60px auto 0 auto;
+}
+@media screen and (max-width: 600px) {
+  body {
+    min-height: 110vh;
+  }
+  .page {
+    width: 80%;
+  }
 }
 a {
   color: #333;

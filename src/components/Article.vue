@@ -19,6 +19,7 @@ export default {
   margin-left: 1rem;
   margin-top: 2rem;
   padding: 1rem;
+  padding-left: 0;
 }
 h2 {
   line-height: 1;
