@@ -13,15 +13,16 @@
 
 <style>
   .header {
-    font-size: 4rem;
+    font-size: 5rem;
     line-height: 1;
     padding: calc(0.5rem + 5px);
     width: 10rem;
     position: relative;
     margin-left: 10px;
+    margin-bottom: 1rem;
     font-family: 'Bahiana';
   }
-  .header:after {
+  .header:before {
     content: "";
     width: 5px;
     height: 0%;
@@ -31,7 +32,7 @@
     left: 0;
     transition: all 1s;
   }
-  .header:hover:after {
+  .header:hover:before {
     height: 100%;
   }
 </style>

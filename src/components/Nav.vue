@@ -1,10 +1,10 @@
 <template>
   <div class="nav">
     <ul>
-      <li v-for="article in articles">
+      <li v-for="n in 3">
         <router-link 
-          :to="{ name: 'Article', params: { article_id: article.id } }">
-          {{ article.title }}
+          :to="{ name: 'Article', params: { article_id: articles[n - 1].id } }">
+          {{ articles[n - 1].title }}
         </router-link>
       </li>
     </ul>
@@ -21,10 +21,9 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .nav {
+  display: inline-block;
   border: 2px solid #333;
-  width: 100%;
-  max-width: 26rem;
-  margin: 1rem;
+  margin-left: 1rem;
 }
 h1, h2 {
   font-weight: normal;
@@ -34,20 +33,23 @@ ul {
   list-style-type: none;
   padding: 0;
   margin: 5px;
-  text-align: center;
+  text-align: left;
 }
 
 li {
   display: inline-block;
   margin: 10px 10px;
+  text-transform: uppercase;
 }
 
-@media screen and (max-width: 688px) {
-  .nav {
-    max-width: 10rem;
+@media screen and (max-width: 800px) {
+  ul {
+    text-align: center;
   }
   li {
+    position: relative;
     display: block;
+    margin: 15px 10px;
   }
 }
 
@@ -57,6 +59,6 @@ a {
 }
 
 a:hover {
-  color: aquamarine;
+  color: darkred;
 }
 </style>
