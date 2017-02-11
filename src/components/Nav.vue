@@ -1,11 +1,14 @@
 <template>
   <div class="nav">
     <ul>
-      <li v-for="n in 3">
+      <li v-for="article in mostRecent">
         <router-link 
-          :to="{ name: 'Article', params: { article_id: articles[n - 1].id } }">
-          {{ articles[n - 1].title }}
+          :to="{ name: 'Article', params: { article_id: article.id } }">
+          {{ article.title }}
         </router-link>
+      </li>
+      <li>
+        <router-link :to="{ name: 'Archive' }" :articles="articles">more...</router-link>
       </li>
     </ul>
   </div>
@@ -14,7 +17,19 @@
 <script>
 export default {
   name: 'nav',
-  props: [ 'articles' ]
+  props: [ 'articles' ],
+  computed: {
+    mostRecent: function() {
+      let recentArr = [];
+      let count = 1;
+      this.articles.some(function(article) {
+        if (count > 3) return true;
+        recentArr.push(article);
+        count++;
+      });
+      return recentArr;
+    }
+  }
 }
 </script>
 
@@ -42,7 +57,7 @@ li {
   text-transform: uppercase;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 946px) {
   ul {
     text-align: center;
   }
@@ -51,14 +66,5 @@ li {
     display: block;
     margin: 15px 10px;
   }
-}
-
-a {
-  color: #333;
-  font-weight: bold;
-}
-
-a:hover {
-  color: darkred;
 }
 </style>

@@ -1,16 +1,23 @@
 <template>
-  <transition name="fade">
-    <div class="article">
-      <h2>{{ articles[this.$route.params.article_id].title }}</h2>
-      <p v-for="paragraph in articles[this.$route.params.article_id].content">{{ paragraph }}</p>
-    </div>
-  </transition>
+  <div class="article">
+    <h2>{{ currentArticle.title }}</h2>
+    <p v-for="paragraph in currentArticle.content">{{ paragraph }}</p>
+  </div>
 </template>
 
 <script>
 export default {
   name: 'article',
-  props: [ 'articles' ]
+  props: [ 'articles' ],
+  computed: {
+    currentArticle: function() {
+      let self = this;
+      let current = this.articles.filter(function(article) {
+        return article.id == self.$route.params.article_id;
+      });
+      return current[0];
+    }
+  }
 }
 </script>
 
@@ -19,12 +26,11 @@ export default {
   margin-left: 1rem;
   margin-top: 1rem;
   padding: 1rem;
-  padding-left: 0;
 }
 h2 {
   line-height: 1;
   color: #333;
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-family: 'Bungee';
   margin-top: 1rem;
 }

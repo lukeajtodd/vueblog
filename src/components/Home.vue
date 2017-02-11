@@ -11,7 +11,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .header {
     font-size: 5rem;
     line-height: 1;
@@ -20,7 +20,9 @@
     position: relative;
     margin-left: 10px;
     margin-bottom: 1rem;
+    margin-top: 1rem;
     font-family: 'Bahiana';
+    display: inline-block;
   }
   .header:before {
     content: "";
@@ -34,5 +36,8 @@
   }
   .header:hover:before {
     height: 100%;
+  }
+  a:hover {
+    color: #333;
   }
 </style>
