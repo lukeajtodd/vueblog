@@ -49,7 +49,7 @@ export default {
 body {
   margin: 0;
   position: relative;
-  min-height: calc(100vh - 80px);
+  min-height: calc(100vh - 1rem);
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -64,7 +64,7 @@ h1, h2, h3 {
 .page {
   text-align: left;
   width: 60%;
-  margin: 60px auto 0 auto;
+  margin: 1rem auto 0 auto;
 }
 @media screen and (max-width: 600px) {
   body {
