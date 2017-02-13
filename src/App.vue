@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    {{ articles }}
     <div class="page">
       <home :title="title"></home>
       <navigation :articles="sortedArticles"></navigation>

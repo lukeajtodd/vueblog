@@ -23,9 +23,9 @@
   .archive {
     margin-left: 1rem;
     padding-top: 1rem;
-    display: inline-block;
   }
   ul {
+    display: inline-block;
     list-style: none;
     padding: 0;
   }
