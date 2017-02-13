@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './App'
-import VuexFire from 'vuexfire'
 import router from './router'
 import { db, store } from './store'
 

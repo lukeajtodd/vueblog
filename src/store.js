@@ -13,9 +13,13 @@ var config = {
     storageBucket: "vueblog-f5f5d.appspot.com",
     messagingSenderId: "360980777620"
   };
+
 firebase.initializeApp(config);
+
+// Export db for use in main
 export const db = firebase.database()
 
+// Export store for use in main
 export const store = new Vuex.Store({
     state: {
         articles: []
