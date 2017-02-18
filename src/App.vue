@@ -28,7 +28,7 @@ export default {
       return sortedArr.sort(function(a, b) {
         a = Math.floor(new Date(a.createdAt.split('-').reverse().join('-')).getTime() / 1000);
         b = Math.floor(new Date(b.createdAt.split('-').reverse().join('-')).getTime() / 1000);
-        return a - b;
+        return b - a;
       });
     }
   },
